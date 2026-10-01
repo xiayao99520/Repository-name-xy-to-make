@@ -10,7 +10,15 @@ import shutil
 from pathlib import Path
 
 
-IMAGE_COUNTS = {4: 2, 6: 3, 8: 4}
+def image_count(duration: float) -> int:
+    """Round a 4–8 second video up to the existing 2/3/4-image tiers."""
+    if duration < 4 or duration > 8:
+        raise ValueError("视频时长必须在 4 到 8 秒之间")
+    if duration <= 4:
+        return 2
+    if duration <= 6:
+        return 3
+    return 4
 STYLE = (
     "高级半调纸拼贴，黑白 halftone 摄影剪贴，彩色卡纸，清晰裁切边，"
     "暖奶油色描边，细腻纸张颗粒，柔和纸张阴影，二维定格动画质感，非写实 3D。"
@@ -44,7 +52,7 @@ def build_prompt(args: argparse.Namespace, count: int) -> str:
 
 
 def make(args: argparse.Namespace) -> Path:
-    count = IMAGE_COUNTS[args.duration]
+    count = image_count(args.duration)
     if len(args.images) != count:
         raise ValueError(f"{args.duration} 秒必须提供 {count} 张图片，实际收到 {len(args.images)} 张")
 
@@ -72,7 +80,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Create a minimal Jimeng collage package")
     parser.add_argument("--transcript", required=True, help="full transcript")
     parser.add_argument("--voiceover", required=True, help="voiceover segment to visualize")
-    parser.add_argument("--duration", type=int, choices=sorted(IMAGE_COUNTS))
+    parser.add_argument("--duration", type=float, required=True, help="4 到 8 秒，可用小数")
     parser.add_argument("--scene", required=True)
     parser.add_argument("--objects", required=True)
     parser.add_argument("--action", required=True)
