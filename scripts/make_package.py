@@ -26,14 +26,15 @@ STYLE = (
 
 
 def clean_name(value: str) -> str:
-    value = re.sub(r"[\\/:*?\"<>|\r\n]+", " ", value).strip()
+    value = re.sub(r"[\\/:*?\"<>|\r\n，。！？、；：]+", " ", value).strip()
     value = re.sub(r"\s+", " ", value)
     return (value or "未命名项目")[:48]
 
 
 def build_prompt(args: argparse.Namespace, count: int) -> str:
     last = count
-    return f"""请使用我上传的 {count} 张参考图，按 1→2→{last} 的顺序，生成一条 {args.duration} 秒、9:16 竖屏的半调纸拼贴二维定格动画。
+    duration_text = f"{args.duration:g}"
+    return f"""请使用我上传的 {count} 张参考图，按 1→2→{last} 的顺序，生成一条 {duration_text} 秒、9:16 竖屏的半调纸拼贴二维定格动画。
 
 对应口播：{args.voiceover}
 全文上下文仅用于理解语义，不要把全文写到画面中。
