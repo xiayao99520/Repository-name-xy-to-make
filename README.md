@@ -1,4 +1,4 @@
-# gbro-collage-broll-jimeng
+# 插画风格视频生成工具 / XY to Make
 
 把中文口播变成可直接交给即梦的半自动 B-roll 素材包。
 
