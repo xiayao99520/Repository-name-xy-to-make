@@ -1,0 +1,34 @@
+# gbro-collage-broll-jimeng
+
+把中文口播变成可直接交给即梦的半自动 B-roll 素材包。
+
+## 当前版本
+
+- 用户只需提供：口播全文、要制作的口播句子、视频时长。
+- 4 秒生成 2 张参考图；6 秒生成 3 张；8 秒生成 4 张。
+- Codex 用内置生图生成 9:16 半调纸拼贴图片。
+- 最终文件夹只包含编号图片和 `即梦视频提示词.txt`。
+- 不调用 Gemini，不上传即梦，不生成剪映工程文件。
+
+## 使用方式
+
+在 Codex 中调用 `$gbro-collage-broll-jimeng`，依次通过视觉隐喻、图片、素材包三道确认门。图片确认后，直接把图片拖入即梦参考图区域，复制文本文件中的提示词生成视频。
+
+本地整理脚本只负责复制已生成图片并写入提示词：
+
+```powershell
+python scripts/make_package.py `
+  --transcript "完整口播全文" `
+  --voiceover "要制作的口播句子" `
+  --duration 4 `
+  --scene "场景" `
+  --objects "对象" `
+  --action "动作" `
+  --result "结果" `
+  --image .\01.png --image .\02.png `
+  --output .\output
+```
+
+## 后续计划
+
+保留本版输入和提示词规则，后续再增加即梦 API 适配层，自动生成视频文件。
