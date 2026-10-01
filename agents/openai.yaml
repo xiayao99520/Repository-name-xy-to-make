@@ -1,6 +1,6 @@
 interface:
   display_name: "即梦半自动 B-roll"
   short_description: "中文口播转 9:16 即梦图片与视频提示词"
-  default_prompt: "使用 $gbro-collage-broll-jimeng，把中文口播做成 4/6/8 秒即梦半调纸拼贴素材包。"
+  default_prompt: "使用 $gbro-collage-broll，把中文口播做成 4/6/8 秒即梦半调纸拼贴素材包。"
 policy:
   allow_implicit_invocation: true

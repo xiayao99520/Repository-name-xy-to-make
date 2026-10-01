@@ -1,5 +1,5 @@
 ---
-name: gbro-collage-broll-jimeng
+name: gbro-collage-broll
 description: 把中文口播变成即梦可用的半调纸拼贴 B-roll 素材包；用户只需提供全文、要制作的口播句子和 4/6/8 秒时长，Codex 负责分镜、生图和即梦视频提示词。
 ---
 
