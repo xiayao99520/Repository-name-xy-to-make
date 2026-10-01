@@ -1,5 +1,5 @@
 interface:
-  display_name: "插画风格视频生成工具 / XY to Make"
+  display_name: "插画风格视频生成工具 / xy to make"
   short_description: "中文口播转插画风格视频素材包"
   default_prompt: "使用 $gbro-collage-broll，把中文口播做成 4/6/8 秒即梦半调纸拼贴素材包。"
 policy:
