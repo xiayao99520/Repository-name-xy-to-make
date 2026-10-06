@@ -109,7 +109,7 @@ def make(args: argparse.Namespace) -> Path:
         "style": "halftone-paper-collage", "top_title_safe_area": True,
         "composition": "full_frame_with_center_core", "image_count": 4,
         "roles": [r for _, r in roles], "palette": args.palette,
-        "status": "gate1-package-created",
+        "status": "plan-created",
     }
     (project / "visual-spec.json").write_text(json.dumps(spec, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return project
