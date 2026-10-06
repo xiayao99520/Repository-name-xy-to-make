@@ -90,14 +90,26 @@ def export_delivery(project: Path, output: Path | None = None) -> Path:
     return destination
 
 
+def require_local_access() -> None:
+    from access_control import ControlError, is_enabled
+
+    try:
+        enabled = is_enabled()
+    except ControlError as exc:
+        raise PermissionError(str(exc)) from exc
+    if not enabled:
+        raise PermissionError("本地控制已停用，未导出交付目录")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="原样导出四张图片与最终即梦提示词")
     parser.add_argument("--project", type=Path, required=True, help="已完成内部生成和文件完整性核对的项目目录")
     parser.add_argument("--output", type=Path, help="交付目录；默认：项目父目录/交付/项目名")
     args = parser.parse_args()
     try:
+        require_local_access()
         destination = export_delivery(args.project, args.output)
-    except (OSError, ValueError, UnicodeError) as exc:
+    except (OSError, PermissionError, ValueError, UnicodeError) as exc:
         parser.error(str(exc))
     print(destination)
     return 0

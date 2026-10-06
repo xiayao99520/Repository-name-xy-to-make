@@ -115,6 +115,17 @@ def make(args: argparse.Namespace) -> Path:
     return project
 
 
+def require_local_access() -> None:
+    from access_control import ControlError, is_enabled
+
+    try:
+        enabled = is_enabled()
+    except ControlError as exc:
+        raise PermissionError(str(exc)) from exc
+    if not enabled:
+        raise PermissionError("本地控制已停用，未建立素材包")
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description="Create a Jimeng-ready collage B-roll package")
     p.add_argument("--speech", required=True, help="one Chinese voiceover line")
@@ -132,8 +143,9 @@ def main() -> int:
     if not math.isfinite(args.duration) or args.duration <= 0:
         p.error("--duration must be a positive finite number")
     try:
+        require_local_access()
         project = make(args)
-    except FileNotFoundError as exc:
+    except (FileNotFoundError, PermissionError) as exc:
         p.error(str(exc))
     print(project)
     return 0

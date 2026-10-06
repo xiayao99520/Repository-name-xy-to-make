@@ -1,6 +1,6 @@
 interface:
   display_name: "插画风/XY to make"
-  short_description: "口播自动全链 → 四图同批独立生图 → 五文件交付"
-  default_prompt: "Use $gbro-jimeng-collage-broll-audited to 自动完成这段中文口播的三个内部阶段：按语义设计四张各有重点的完整画面并建立完整内部素材包，先写完并保存四份完整生图 prompt，再实际调用 load_image_prompts.py 读取校验；成功后用 Promise.allSettled 同批发出四次独立 Codex image_gen 请求，不传前图，不串行兜底，按原输入索引保存。统一纸拼贴风格，不锁定同一场景和物件坐标，不套历史案例。默认不等待确认、不展示中间结果，生成后不 view_image、不目视验图、不做视觉 QA 或自动审美重做；网络或超时失败只补试失败请求一次，成功图保留，仍失败如实报告缺项。四图文件完整后实际调用原 video_prompt() 生成即梦提示词并核对返回值，再运行 export_delivery.py 原字节复制四图和提示词，校验五文件及哈希，最终只链接交付目录。内部文件照常产出；用户明确只要方案、暂停或限定范围时服从。"
+  short_description: "中文口播 → 四图并行生图 → 即梦提示词 → 五文件交付"
+  default_prompt: "Use $gbro-jimeng-collage-broll-audited 完成这段中文口播。先运行 access_control.py --check；通过后按语义设计四张各有重点的完整画面并建立内部素材包，写完四份实际生图 Prompt 后运行 load_image_prompts.py 校验，再用 Promise.allSettled 同批发出四次独立 Codex image_gen 请求，不传前图、不串行兜底，按原输入索引保存。保持半调纸拼贴、9:16、中部核心和顶部标题安全区；四图不锁定同一场景或物件坐标。默认不等待确认、不展示中间材料、不调用 view_image、不做视觉 QA 或自动审美重做；网络或超时失败只补试失败编号一次。四图完整后调用原 video_prompt() 生成 05-即梦视频提示词.txt，核对返回值，再用 export_delivery.py 原字节复制四图和提示词并校验哈希，最终只链接交付目录。用户明确只要方案、暂停或限定范围时服从。"
 policy:
   allow_implicit_invocation: true
