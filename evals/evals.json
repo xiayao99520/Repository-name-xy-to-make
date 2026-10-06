@@ -1,0 +1,59 @@
+{
+  "skill_name": "gbro-jimeng-collage-broll-audited",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "上海交大团队研究发现，每天吃40克（抗性淀粉），不仅脂肪肝降了57.7%，连体重和体脂也跟着下降。口播6秒。",
+      "expected_output": "Automatically complete all three internal stages without requesting approval. Preserve the research context and quantity ownership while designing four independently composed semantic images; do not build one fixed board with incremental changes. Actually create and retain the complete internal package, save all four full image prompts, run load_image_prompts.py successfully, then submit four independent calls to the same Codex image_gen interface in one batch and collect them with Promise.allSettled. No previous-image references, sequential fallback, intermediate presentation, view_image, visual QA or aesthetic regeneration. After successful nonempty numbered image files exist, actually call the original video_prompt() through --video-only --duration 6, check its file output, export the four originals and final prompt with matching hashes, and link only the five-file delivery folder. Never claim visual quality was inspected.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "本次四张语义画面的内部方案已保存，继续制作素材。",
+      "expected_output": "Retain the internal package and author all four full image prompts with shared visual style and distinct per-image subjects and compositions. All four actual prompt files must be written successfully before the first image request. In one functions.exec call, actually run scripts/load_image_prompts.py --project <internal project>, require exit_code 0, parse the four numbered records, then immediately start all four image_gen calls before awaiting any result. Use Promise.allSettled, transparent_background:false, no referenced_image_paths and no num_last_images_to_include. Save each successful result by original input index even when completion order differs. Do not view images, make contact sheets, perform visual QA, wait for approval, or chain-edit frames; continue automatically through the original video function and verified delivery export.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "四个生图请求均成功，编号01到04的文件存在且非空，继续生成6秒的即梦提示词并交付。",
+      "expected_output": "Without image approval or visual inspection, actually execute scripts/make_package.py with the six inputs speech, scene, objects, action, result, palette derived from the current narration, internal plan and saved full image prompts, the existing project's unchanged output/title/date, --video-only and --duration 6. Verify that the command invokes video_prompt() with the original six content inputs and optional duration=6; the old six-input call remains valid and returns the original 5-second text. Do not infer a replacement template or add a per-second scene-rotation storyboard. The entire 05-即梦视频提示词.txt must equal the function's return value with normalized final newline. Apart from the requested first-sentence duration, preserve the original fixed paragraphs, wording, order and examples. Required corrections go into the six inputs and are regenerated, never manually rewritten. Images and actual image-prompt files must remain unchanged. The --video-only call changes only the existing project's 05 file; a missing project fails without being created. Then export and link only the five-file delivery folder. No Gemini, Veo, video API, extra images, visual QA or approval gates.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "配送员有权拒绝配送，消费者有权拒收。上下文是外卖未封口或封口破损。",
+      "expected_output": "Distinguish the common trigger, courier refusal, consumer refusal, and combined rights. Do not depict one refused delivery subsequently delivered to the consumer. Permit distinct scenes rather than fixed-layout incremental states. Continue all three internal stages automatically: save the plan and four complete prompts, verify the on-disk prompt barrier, submit four independent image requests together, check only request and file completeness, invoke the original video function, and export exactly five unchanged deliverables. Do not stop at the former Gate 1 or Gate 2, request approval, inspect images or perform aesthetic retries.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "三个内部阶段已完成，四图文件完整，原函数视频提示词已经核对。用插画风/XY to make只交付四张图片和即梦提示词，内部材料全部保留。",
+      "expected_output": "Keep all completed internal materials and actually run scripts/export_delivery.py. Export exactly four uniquely numbered nonempty PNG/JPG/JPEG originals and nonempty 05-即梦视频提示词.txt into a separate folder, preserving filenames, extensions and bytes. Do not copy README, image prompts, JSON, logs, previews or ZIP files. Verify all five destination SHA-256 values against sources and that internal files did not change. Missing or duplicate image numbers or a missing/empty prompt prevents export. An existing destination gets a new numbered sibling. Do not inspect, regenerate or re-encode images, rewrite the prompt, demand approval, or use spec.status as an approval gate. Final response links only the delivery folder. Display name remains 插画风/XY to make and the internal skill identifier is unchanged.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "四张图的文字已经想好了，但第三份实际生图prompt还没保存，第四份文件仍是建包时的中文草稿。继续自动制作。",
+      "expected_output": "Do not send any image request yet. Finish writing all four actual complete prompt files, replacing only the image-prompt drafts, and actually rerun load_image_prompts.py. Nonzero exit, malformed JSON, a missing/blank prompt, or a remaining make_package.py draft blocks every image request until repaired. Only after the loader succeeds with all four ordered records may a single batch of four independent image_gen requests start. No user approval is needed to complete the saves.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "模拟本次四图请求：初次四次都已发出，第4张先完成，第2张超时，第1和第3张随后成功；第2张补试成功。继续交付。",
+      "expected_output": "Collect all initial outcomes with Promise.allSettled and preserve original input indices rather than completion order. Treat both rejected requests and fulfilled tool results with isError:true as failures; inspect only error text to classify network/timeout errors. Retry only original index 1 (image 02) exactly once using the same saved prompt and the same tool with no reference image. Keep successful images 01, 03 and 04; total image requests are five. Place the retry result back into index 1 and persist every successful result via store under its original number for later path-based copying after functions.exec ends. Never print full image results or base64. Perform no view_image, contact sheet, visual QA or aesthetic retry. Once all four requests succeed and their files exist and are nonempty, continue automatically to the original video function and hash-verified five-file export.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "模拟本次四图请求：第3张网络错误，唯一一次补试仍失败，其余三张都成功。",
+      "expected_output": "Retain successful images 01, 02 and 04 at their original numbers. Do not retry image 03 a second time and do not regenerate successful images. Report the missing image and incomplete technical result without demanding an aesthetic approval or claiming a complete deliverable. Do not export a partial folder as the final five-file package. Non-network errors or missing/empty output files likewise cannot be passed off as completed images.",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "配送员有权拒绝配送，消费者有权拒收。这次只给我四张图的方案，先不要生图或视频提示词。",
+      "expected_output": "Honor the explicit scope override: present only the four-image semantic plan and stop. Do not call image_gen, generate a video prompt, export a delivery, or insist on completing the automatic default. Preserve the common unsealed/damaged-seal condition and the two distinct refusal rights when that context is supplied. A later explicit pause must also stop new work.",
+      "files": []
+    }
+  ]
+}
