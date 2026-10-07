@@ -1,6 +1,6 @@
 interface:
-  display_name: "插画风/XY to make"
-  short_description: "中文口播 → 详细四图 Prompt → 并行生图 → 即梦提示词"
-  default_prompt: "Use $gbro-jimeng-collage-broll-audited 完成这段中文口播。先运行 access_control.py --check；内部提炼核心意思、情绪、场景、对象、动作、结果、数字和否定关系，分别写出建立场景、关键对象、动作关系、结果冲突四张独立画面方案。四份实际图片 Prompt 必须完整包含 Use case: ads-marketing、9:16 新闻 B-roll、半调纸拼贴视觉语言、中部核心与顶部标题安全区、每张独立对象和构图、逐字中文标签、可数的数量/排列约束、题材负面限制；不能只写风格加概括，不能把旧题材换名词套用。全部保存后运行 load_image_prompts.py 校验，再用 Promise.allSettled 同批发出四次独立 Codex image_gen 请求，不传前图、不串行等待，按原输入索引保存；网络或超时失败只补试一次。保留无 view_image、无视觉 QA、无审美重做的轻量检查。四图完整后调用原 video_prompt() 生成 05-即梦视频提示词.txt，核对返回值，再用 export_delivery.py 原字节复制四图和提示词并校验哈希，最终只交付五文件目录。"
+  display_name: "插画风/XY to make（旧流程逐图复刻版）"
+  short_description: "中文口播逐图设计四份独立 Prompt，四路生图并交付即梦素材"
+  default_prompt: "Use $gbro-jimeng-collage-broll-audited 从这段中文口播分别设计四张独立画面，保存四份完整生图 Prompt，按旧流程四路并行生图，并交付四图与一份即梦视频提示词。"
 policy:
   allow_implicit_invocation: true
